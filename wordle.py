@@ -138,7 +138,8 @@ class BasicSolver:
     def modify_possible_letters(self, guess, score):
         for i in range(len(guess)):
             if score[i] == '0':
-                self.possible_letters.remove(guess[i])
+                if guess[i] in self.possible_letters:
+                    self.possible_letters.remove(guess[i])
 
     # Modifies the possible words based on the user's input
     def modify_possible_words(self, guess, score):
@@ -227,7 +228,8 @@ class FancySolver:
     def modify_possible_letters(self, guess, score):
         for i in range(len(guess)):
             if score[i] == '0':
-                self.possible_letters.remove(guess[i])
+                if guess[i] in self.possible_letters:
+                    self.possible_letters.remove(guess[i])
 
     # Modifies the possible words based on the user's input
     def modify_possible_words(self, guess, score):
